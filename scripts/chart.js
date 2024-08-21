@@ -62,7 +62,7 @@ async function displayData(data) {
   for (const serieName of series) {
 
     const serie = {
-      // name: serieName,
+      name: "",
       type: "scatter",
       data: [],
       markLine: {
