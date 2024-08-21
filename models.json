@@ -1,0 +1,60 @@
+[
+    {
+        "model": "gpt-4o-mini",
+        "link": "https://huggingface.co/"
+    },
+    {
+        "model": "gpt-3.5-turbo",
+        "link": "https://huggingface.co/"
+    },
+    {
+        "model": "Qwen2-72B-Instruct-GPTQ-Int4",
+        "link": "https://huggingface.co/",
+        "size": 72
+    },
+    {
+        "model": "deepseek-coder-33b-instruct",
+        "link": "https://huggingface.co/",
+        "size": 33
+    },
+    {
+        "model": "DeepSeek-Coder-V2-Lite-Instruct",
+        "link": "https://huggingface.co/",
+        "size": 16
+    },
+    {
+        "model": "deepseek-coder-6.7b-instruct",
+        "link": "https://huggingface.co/",
+        "size": 6.7
+    },
+    {
+        "model": "CodeLlama-34b-Instruct-hf",
+        "link": "https://huggingface.co/",
+        "size": 34
+    },
+    {
+        "model": "CodeLlama-13b-Instruct-hf",
+        "link": "https://huggingface.co/",
+        "size": 13
+    },
+    {
+        "model": "CodeLlama-7b-Instruct-hf",
+        "link": "https://huggingface.co/",
+        "size": 7
+    },
+    {
+        "model": "CodeQwen1.5-7B-Chat",
+        "link": "https://huggingface.co/",
+        "size": 7
+    },
+    {
+        "model": "Phi-3-medium-4k-instruct",
+        "link": "https://huggingface.co/",
+        "size": 13
+    },
+    {
+        "model": "Llama-2-13b-chat-hf",
+        "link": "https://huggingface.co/",
+        "size": 13
+    }
+]

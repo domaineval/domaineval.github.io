@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400&display=swap"
+    rel="stylesheet"
+  />
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>DomainEval Leaderboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+    <!-- favicon.svg -->
+    <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👍</text></svg>"> -->
+    <!-- <link rel="icon" href="/favicon.svg" /> -->
+    <link
+      rel="icon"
+      href="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/svg/2615.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "JetBrains Mono", monospace;
+        background-color: #ffffff;
+        color: #000000;
+      }
+
+      #content {
+        width: 75%;
+      }
+
+      th,
+      td {
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      #notes {
+        font-size: 1em;
+      }
+
+      #notes h3 {
+        margin-top: 1em;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      #notes li {
+        font-size: 1.2em;
+        font-weight: 300;
+        margin: 1em;
+      }
+
+      .form-select {
+        font-size: 1em;
+      }
+
+      table {
+        font-size: small;
+      }
+
+      @media screen and (max-width: 1400px) {
+        body {
+          font-size: 1.6vw;
+        }
+
+        #content {
+          width: 100%;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        h2 {
+          font-size: 1.6em;
+        }
+
+        h3 {
+          font-size: 1.2em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="content"
+      class="container-fluid d-flex flex-column align-items-center gap-3"
+    >
+      <h1 class="text-nowrap mt-5">☕︎ DomainEval ☕️</h1>
+      <h3 class="fw-light text-nowrap">
+        <small id="warning">An Auto-Constructed Benchmark for Multi-Domain Code Generation</small>
+      </h3>
+      <div class="d-flex flex-row justify-content-center gap-3">
+        <a href="https://github.com/domaineval/"
+          ><img
+            src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+            class="img-fluid"
+        /></a>
+        <!-- <a href="https://openreview.net/forum?id=1qvx610Cu7"
+          ><img
+            src="https://img.shields.io/badge/Paper-NeurIPS'23-a55fed.svg?style=for-the-badge"
+            alt="paper"
+            class="img-fluid"
+        /></a> -->
+      </div>
+      <div class="btn-group" role="group" id="Metrics">
+        <input type="radio" class="btn-check" name="btnradio" id="computation" checked/>
+        <label class="btn btn-outline-primary" for="computation">Computation</label>
+        <input type="radio" class="btn-check" name="btnradio" id="network" />
+        <label class="btn btn-outline-primary" for="network">Network</label>
+        <input type="radio" class="btn-check" name="btnradio" id="visualization" />
+        <label class="btn btn-outline-primary" for="visualization">Visualization</label>
+        <input type="radio" class="btn-check" name="btnradio" id="basic" />
+        <label class="btn btn-outline-primary" for="basic">Basic</label>
+        <input type="radio" class="btn-check" name="btnradio" id="system" />
+        <label class="btn btn-outline-primary" for="system">System</label>
+        <input type="radio" class="btn-check" name="btnradio" id="cryptography" />
+        <label class="btn btn-outline-primary" for="cryptography">Cryptography</label>
+      </div>
+      <div id="chart" style="width: 100%; height: 600px"></div>
+      <div class="container-fluid d-flex flex-row flex-nowrap">
+        <div class="container-fluid d-flex flex-column align-items-center">
+          <label for="pass_1" class="text-success mb-3">Greedy Search N=1 Temperature=0.0</label>
+          <table
+            id="pass_1"
+            class="table table-responsive table-striped table-bordered flex-shrink-1 border border-success border-3"
+          >
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Pass</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="container-fluid d-flex flex-column align-items-center">
+          <label for="pass_5" class="text-danger mb-3">Sampling Search N=5 Temperature=0.2</label>
+          <table
+            id="pass_5"
+            class="table table-responsive table-striped table-bordered flex-shrink-1 border border-danger border-3"
+          >
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Pass</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div id="notes">
+        <h3>📝 Submission</h3>
+        <div class="inline-block mt-3">
+          Thank you for your interest in JavaBench. We warmly welcome
+          researchers to submit additional benchmarking results, as we believe
+          that collaborative efforts can significantly advance the study of
+          Large Language Models and software engineering. For submission
+          guidelines, please refer to our
+          <a
+            href="https://github.com/java-bench/JavaBench?tab=readme-ov-file#usage"
+            >Github Repo</a
+          >.
+        </div>
+      </div>
+      <div id="notes">
+        <h3>🤗 Acknowledgement</h3>
+        Thanks for the
+        <a href="https://evalplus.github.io/leaderboard.html">EvalPlus</a> for
+        sharing the leaderboard template. In addition to JavaBench leaderboards,
+        it is recommended to comprehensively understand LLM coding ability
+        through a diverse set of benchmarks and leaderboards, such as:
+        <div class="inline-block mt-3">
+          <ol>
+            <li>
+              <a href="https://evalplus.github.io/leaderboard.html"
+                >EvalPlus Leaderboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://huggingface.co/spaces/bigcode/bigcode-models-leaderboard"
+                >Big Code Models Leaderboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard"
+                >Chatbot Arena Leaderboard</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/amazon-science/cceval"
+                >CrossCodeEval</a
+              >
+            </li>
+            <li>
+              <a href="https://fudanselab-classeval.github.io/">ClassEval</a>
+            </li>
+            <li>
+              <a href="https://crux-eval.github.io/leaderboard.html"
+                >CRUXEval</a
+              >
+            </li>
+            <li>
+              <a href="https://codetlingua.github.io/leaderboard.html"
+                >Code Lingua</a
+              >
+            </li>
+            <li><a href="https://evo-eval.github.io/">Evo-Eval</a></li>
+            <li>
+              <a href="https://github.com/01-ai/HumanEval.jl"
+                >HumanEval.jl - Julia version HumanEval with EvalPlus test
+                cases</a
+              >
+            </li>
+            <li>
+              <a href="https://infi-coder.github.io/inficoder-eval/"
+                >InfiCoder-Eval</a
+              >
+            </li>
+            <li>
+              <a href="https://livecodebench.github.io/leaderboard.html"
+                >LiveCodeBench</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/THUDM/NaturalCodeBench"
+                >NaturalCodeBench</a
+              >
+            </li>
+            <li><a href="https://github.com/Leolty/repobench">RepoBench</a></li>
+            <li><a href="https://www.swebench.com/">SWE-bench</a></li>
+            <li>
+              <a href="https://leaderboard.tabbyml.com/">TabbyML Leaderboard</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/common.js"></script>
+    <script src="./scripts/chart.js" type="module"></script>
+    <script src="./scripts/table.js" type="module"></script>
+  </body>
+</html>

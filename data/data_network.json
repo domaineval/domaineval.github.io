@@ -1,0 +1,102 @@
+{
+    "pass_1": [
+        {
+            "Model": "gpt-4o-mini",
+            "Pass_at_k": 0.703125
+        },
+        {
+            "Model": "gpt-3.5-turbo",
+            "Pass_at_k": 0.58984375
+        },
+        {
+            "Model": "Qwen2-72B-Instruct-GPTQ-Int4",
+            "Pass_at_k": 0.66796875
+        },
+        {
+            "Model": "deepseek-coder-33b-instruct",
+            "Pass_at_k": 0.64453125
+        },
+        {
+            "Model": "DeepSeek-Coder-V2-Lite-Instruct",
+            "Pass_at_k": 0.62109375
+        },
+        {
+            "Model": "deepseek-coder-6.7b-instruct",
+            "Pass_at_k": 0.58984375
+        },
+        {
+            "Model": "CodeLlama-34b-Instruct-hf",
+            "Pass_at_k": 0.6015625
+        },
+        {
+            "Model": "CodeLlama-13b-Instruct-hf",
+            "Pass_at_k": 0.62109375
+        },
+        {
+            "Model": "CodeLlama-7b-Instruct-hf",
+            "Pass_at_k": 0.60546875
+        },
+        {
+            "Model": "CodeQwen1.5-7B-Chat",
+            "Pass_at_k": 0.609375
+        },
+        {
+            "Model": "Phi-3-medium-4k-instruct",
+            "Pass_at_k": 0.6015625
+        },
+        {
+            "Model": "Llama-2-13b-chat-hf",
+            "Pass_at_k": 0.53125
+        }
+    ],
+    "pass_5": [
+        {
+            "Model": "gpt-4o-mini",
+            "Pass_at_k": 0.7265625
+        },
+        {
+            "Model": "gpt-3.5-turbo",
+            "Pass_at_k": 0.62890625
+        },
+        {
+            "Model": "Qwen2-72B-Instruct-GPTQ-Int4",
+            "Pass_at_k": 0.70703125
+        },
+        {
+            "Model": "deepseek-coder-33b-instruct",
+            "Pass_at_k": 0.70703125
+        },
+        {
+            "Model": "DeepSeek-Coder-V2-Lite-Instruct",
+            "Pass_at_k": 0.65625
+        },
+        {
+            "Model": "deepseek-coder-6.7b-instruct",
+            "Pass_at_k": 0.63671875
+        },
+        {
+            "Model": "CodeLlama-34b-Instruct-hf",
+            "Pass_at_k": 0.6328125
+        },
+        {
+            "Model": "CodeLlama-13b-Instruct-hf",
+            "Pass_at_k": 0.65625
+        },
+        {
+            "Model": "CodeLlama-7b-Instruct-hf",
+            "Pass_at_k": 0.63671875
+        },
+        {
+            "Model": "CodeQwen1.5-7B-Chat",
+            "Pass_at_k": 0.640625
+        },
+        {
+            "Model": "Phi-3-medium-4k-instruct",
+            "Pass_at_k": 0.67578125
+        },
+        {
+            "Model": "Llama-2-13b-chat-hf",
+            "Pass_at_k": 0.55859375
+        }
+    ]
+}
