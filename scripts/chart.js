@@ -32,6 +32,9 @@ const chartOption = {
         type: "dashed",
       },
     },
+    min: function (value) {
+      return Math.floor(value.min / 10) * 10;
+    },
   },
   tooltip: {
     trigger: "item",
@@ -48,10 +51,11 @@ async function displayData(data) {
   //console.log("Flattened data:", flattened);
 
   const modelSizes = models.map((m) => Math.round(m.size)).filter(Boolean);
+  modelSizes.push(0)
   modelSizes.sort((a, b) => a - b);
 
 
-  chartOption.xAxis.data = modelSizes;
+  chartOption.xAxis.data = [...new Set(modelSizes)];
   chartOption.series = [];
 
   const series = ["pass_1", "pass_5"];
@@ -62,9 +66,27 @@ async function displayData(data) {
   for (const serieName of series) {
 
     const serie = {
-      name: "",
+      name: serieName,
       type: "scatter",
       data: [],
+      label: {
+        show: true,
+        position: 'top',
+        formatter: function (params) {
+          return params.data.modelname;
+        },
+        // textStyle: {
+        //   color: function (params) {
+        //     return params.color;
+        //   }
+        // },
+      },
+      itemStyle: {
+        opacity: 0.7,
+      },
+      emphasis: {
+        focus: "series",
+      },
       markLine: {
         symbol: "none",
         emphasis: {
@@ -85,6 +107,7 @@ async function displayData(data) {
       if (modelSize !== undefined) {
         serie.data.push({
           name: `${row["model"]}(${serieName})`,
+          modelname: row["model"],
           value: [`${Math.round(modelSize)}`, row[serieName]],
         });
       } else {
