@@ -133,7 +133,7 @@ buttons.forEach(({ id, file}) => {
   });
 });
 
-fetch("data/data_overall.json")
+fetch("data/data_mean.json")
   .then((resp) => resp.json())
   .then((data) => {
     displayData(data);

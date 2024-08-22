@@ -2,101 +2,101 @@
     "pass_1": [
         {
             "Model": "gpt-4o-mini",
-            "Pass_at_k": 0.51
+            "Pass_at_k": 0.6392167158851098
         },
         {
             "Model": "gpt-3.5-turbo",
-            "Pass_at_k": 0.32
+            "Pass_at_k": 0.5173093867812127
         },
         {
             "Model": "Qwen2-72B-Instruct-GPTQ-Int4",
-            "Pass_at_k": 0.41
+            "Pass_at_k": 0.5821338153067455
         },
         {
             "Model": "deepseek-coder-33b-instruct",
-            "Pass_at_k": 0.46
+            "Pass_at_k": 0.5662224371484669
         },
         {
             "Model": "DeepSeek-Coder-V2-Lite-Instruct",
-            "Pass_at_k": 0.41
+            "Pass_at_k": 0.5709516524435644
         },
         {
             "Model": "deepseek-coder-6.7b-instruct",
-            "Pass_at_k": 0.36
+            "Pass_at_k": 0.5369104775806756
         },
         {
             "Model": "CodeLlama-34b-Instruct-hf",
-            "Pass_at_k": 0.35
+            "Pass_at_k": 0.49883717003087863
         },
         {
             "Model": "CodeLlama-13b-Instruct-hf",
-            "Pass_at_k": 0.34
+            "Pass_at_k": 0.5079237551407199
         },
         {
             "Model": "CodeLlama-7b-Instruct-hf",
-            "Pass_at_k": 0.36
+            "Pass_at_k": 0.5025963506694164
         },
         {
             "Model": "CodeQwen1.5-7B-Chat",
-            "Pass_at_k": 0.37
+            "Pass_at_k": 0.5478265270659565
         },
         {
             "Model": "Phi-3-medium-4k-instruct",
-            "Pass_at_k": 0.42
+            "Pass_at_k": 0.5325705088456162
         },
         {
             "Model": "Llama-2-13b-chat-hf",
-            "Pass_at_k": 0.19
+            "Pass_at_k": 0.4081157767758989
         }
     ],
     "pass_5": [
         {
             "Model": "gpt-4o-mini",
-            "Pass_at_k": 0.57
+            "Pass_at_k": 0.6712887357331225
         },
         {
             "Model": "gpt-3.5-turbo",
-            "Pass_at_k": 0.36
+            "Pass_at_k": 0.5552003408082177
         },
         {
             "Model": "Qwen2-72B-Instruct-GPTQ-Int4",
-            "Pass_at_k": 0.5
+            "Pass_at_k": 0.6425337299072272
         },
         {
             "Model": "deepseek-coder-33b-instruct",
-            "Pass_at_k": 0.57
+            "Pass_at_k": 0.6384974825984445
         },
         {
             "Model": "DeepSeek-Coder-V2-Lite-Instruct",
-            "Pass_at_k": 0.49
+            "Pass_at_k": 0.615879493228943
         },
         {
             "Model": "deepseek-coder-6.7b-instruct",
-            "Pass_at_k": 0.49
+            "Pass_at_k": 0.6152211001996906
         },
         {
             "Model": "CodeLlama-34b-Instruct-hf",
-            "Pass_at_k": 0.41
+            "Pass_at_k": 0.5706463475004796
         },
         {
             "Model": "CodeLlama-13b-Instruct-hf",
-            "Pass_at_k": 0.38
+            "Pass_at_k": 0.5774106930778998
         },
         {
             "Model": "CodeLlama-7b-Instruct-hf",
-            "Pass_at_k": 0.43
+            "Pass_at_k": 0.5826237976596688
         },
         {
             "Model": "CodeQwen1.5-7B-Chat",
-            "Pass_at_k": 0.45
+            "Pass_at_k": 0.6094825601888648
         },
         {
             "Model": "Phi-3-medium-4k-instruct",
-            "Pass_at_k": 0.47
+            "Pass_at_k": 0.6087859319852885
         },
         {
             "Model": "Llama-2-13b-chat-hf",
-            "Pass_at_k": 0.26
+            "Pass_at_k": 0.46487622755859775
         }
     ]
 }

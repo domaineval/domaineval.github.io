@@ -1,4 +1,4 @@
-const domains = ["overall", "computation", "network", "visualization", "basic", "system", "cryptography"];
+const domains = ["mean", "computation", "network", "visualization", "basic", "system", "cryptography", "std"];
 const buttons = domains.map(item => ({
   id: item,
   file: `data/data_${item}.json`
