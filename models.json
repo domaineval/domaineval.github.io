@@ -1,60 +1,60 @@
 [
     {
         "model": "gpt-4o-mini",
-        "link": "https://huggingface.co/"
+        "link": "https://openai.com/"
     },
     {
         "model": "gpt-3.5-turbo",
-        "link": "https://huggingface.co/"
+        "link": "https://openai.com/"
     },
     {
         "model": "Qwen2-72B-Instruct-GPTQ-Int4",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/Qwen/Qwen2-72B-Instruct-GPTQ-Int4",
         "size": 72
     },
     {
         "model": "deepseek-coder-33b-instruct",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct",
         "size": 33
     },
     {
         "model": "DeepSeek-Coder-V2-Lite-Instruct",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
         "size": 16
     },
     {
         "model": "deepseek-coder-6.7b-instruct",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-instruct",
         "size": 6.7
     },
     {
         "model": "CodeLlama-34b-Instruct-hf",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/codellama/CodeLlama-34b-Instruct-hf",
         "size": 34
     },
     {
         "model": "CodeLlama-13b-Instruct-hf",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/meta-llama/CodeLlama-13b-Instruct-hf",
         "size": 13
     },
     {
         "model": "CodeLlama-7b-Instruct-hf",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/meta-llama/CodeLlama-7b-Instruct-hf",
         "size": 7
     },
     {
         "model": "CodeQwen1.5-7B-Chat",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/Qwen/CodeQwen1.5-7B-Chat",
         "size": 7
     },
     {
         "model": "Phi-3-medium-4k-instruct",
-        "link": "https://huggingface.co/",
-        "size": 13
+        "link": "https://huggingface.co/microsoft/Phi-3-medium-4k-instruct",
+        "size": 14
     },
     {
         "model": "Llama-2-13b-chat-hf",
-        "link": "https://huggingface.co/",
+        "link": "https://huggingface.co/meta-llama/Llama-2-13b-chat-hf",
         "size": 13
     }
 ]

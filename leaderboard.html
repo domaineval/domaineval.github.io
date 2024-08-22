@@ -108,15 +108,35 @@
             alt="github"
             class="img-fluid"
         /></a>
-        <!-- <a href="https://openreview.net/forum?id=1qvx610Cu7"
+        <a href="https://example.com/paper"
           ><img
-            src="https://img.shields.io/badge/Paper-NeurIPS'23-a55fed.svg?style=for-the-badge"
+            src="https://img.shields.io/badge/paper-%23B31B1B.svg?style=for-the-badge&logo=arxiv&logoColor=white"
             alt="paper"
             class="img-fluid"
-        /></a> -->
+        /></a>
+        <a href="https://arxiv.org/abs/xxxx.xxxxx"
+          ><img
+            src="https://img.shields.io/badge/arxiv-%23B31B1B.svg?style=for-the-badge&logo=arxiv&logoColor=white"
+            alt="arxiv"
+            class="img-fluid"
+        /></a>
+        <a href="https://github.com/domaineval/"
+          ><img
+            src="https://img.shields.io/badge/code-%23333333.svg?style=for-the-badge&logo=github&logoColor=white"
+            alt="code"
+            class="img-fluid"
+        /></a>
+        <a href="https://github.com/domaineval/"
+          ><img
+            src="https://img.shields.io/badge/data-%230075A8.svg?style=for-the-badge&logo=google-drive&logoColor=white"
+            alt="data"
+            class="img-fluid"
+        /></a>
       </div>
       <div class="btn-group" role="group" id="Metrics">
-        <input type="radio" class="btn-check" name="btnradio" id="computation" checked/>
+        <input type="radio" class="btn-check" name="btnradio" id="overall" checked/>
+        <label class="btn btn-outline-primary" for="overall">Overall</label>
+        <input type="radio" class="btn-check" name="btnradio" id="computation" />
         <label class="btn btn-outline-primary" for="computation">Computation</label>
         <input type="radio" class="btn-check" name="btnradio" id="network" />
         <label class="btn btn-outline-primary" for="network">Network</label>
@@ -141,7 +161,7 @@
               <tr>
                 <th>#</th>
                 <th>Model</th>
-                <th>Pass</th>
+                <th id="passHeader">Pass</th>
               </tr>
             </thead>
             <tbody></tbody>

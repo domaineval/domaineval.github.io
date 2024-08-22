@@ -54,7 +54,7 @@ buttons.forEach(({ id, file}) => {
   });
 });
 
-fetch("data/data_computation.json")
+fetch("data/data_overall.json")
   .then((resp) => resp.json())
   .then((data) => {
     displayData(data);
