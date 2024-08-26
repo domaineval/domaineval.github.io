@@ -54,19 +54,19 @@ buttons.forEach(({ id, file}) => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('input[name="btnradio"]').forEach(input => {
-    input.addEventListener('change', function() {
-      const tables = document.querySelectorAll('table');
-      tables.forEach(table => {
-        const passHeader = table.querySelector('th:nth-child(3)');
-        if (this.id === 'std')
-          passHeader.textContent = 'Std';
-        else passHeader.textContent = 'Pass';
-      });
-    });
-  });
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   document.querySelectorAll('input[name="btnradio"]').forEach(input => {
+//     input.addEventListener('change', function() {
+//       const tables = document.querySelectorAll('table');
+//       tables.forEach(table => {
+//         const passHeader = table.querySelector('th:nth-child(3)');
+//         if (this.id === 'std')
+//           passHeader.textContent = 'Std';
+//         else passHeader.textContent = 'Pass';
+//       });
+//     });
+//   });
+// });
 
 fetch("data/data_mean.json")
   .then((resp) => resp.json())
